@@ -18,12 +18,9 @@ import ProductArt from "../illustrations/ProductArt";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/products", mega: true },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Projects", href: "/projects" },
-  { label: "Services", href: "/services" },
-  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
+  { label: "Products", href: "/products", mega: true },
+  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -60,8 +57,8 @@ export default function SiteHeader() {
             <Sun className="h-3.5 w-3.5 text-accent-400" />
             Free site survey &amp; subsidy assistance on every rooftop system
           </p>
-          <a href="tel:+911800123456" className="flex items-center gap-1.5 text-sand-100/80 transition hover:text-accent-400">
-            <Phone className="h-3.5 w-3.5" /> +91 1800-123-456
+          <a href="tel:+917200082596" className="flex items-center gap-1.5 text-sand-100/80 transition hover:text-accent-400">
+            <Phone className="h-3.5 w-3.5" /> +91 72000 82596
           </a>
         </div>
       </div>
@@ -71,14 +68,9 @@ export default function SiteHeader() {
           scrolled ? "bg-sand-50/90 shadow-soft backdrop-blur-lg" : "bg-sand-50"
         }`}
       >
-        <div className="container-page flex h-[76px] items-center justify-between gap-6">
-          <Link to="/" className="flex shrink-0 items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-800">
-              <Sun className="h-5 w-5 text-accent-400" />
-            </span>
-            <span className="font-heading text-lg font-extrabold leading-none tracking-tight text-ink-900">
-              Sol Green<span className="text-primary-700"> Solar</span>
-            </span>
+        <div className="container-page flex min-h-[90px] py-2 items-center justify-between gap-6">
+          <Link to="/" className="flex shrink-0 items-center">
+            <img src="/logo.png" alt="Sol Green Solar" className="h-20 sm:h-24 w-auto max-h-[85px] object-contain drop-shadow-sm" />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
@@ -117,7 +109,9 @@ export default function SiteHeader() {
                               to={`/category/${cat.slug}`}
                               className="group flex flex-col items-center gap-2 rounded-2xl p-3 text-center transition hover:bg-sand-100"
                             >
-                              <ProductArt icon={cat.icon} tint="green" className="h-14 w-14" />
+                              <div className="h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-sand-100">
+                                <ProductArt icon={cat.icon} tint="green" className="h-full w-full object-cover" />
+                              </div>
                               <span className="text-xs font-semibold leading-tight text-ink-900 group-hover:text-primary-800">
                                 {cat.name}
                               </span>

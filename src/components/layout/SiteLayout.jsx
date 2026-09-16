@@ -19,7 +19,7 @@ export default function SiteLayout() {
       </main>
       <SiteFooter />
       <a
-        href="https://wa.me/911800123456"
+        href="https://wa.me/917200082596"
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-24 left-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lift transition hover:scale-105 sm:bottom-6 sm:left-6 sm:h-14 sm:w-14"

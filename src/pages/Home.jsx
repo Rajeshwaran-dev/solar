@@ -2,13 +2,11 @@ import Hero from "../components/home/Hero";
 import StatsStrip from "../components/home/StatsStrip";
 import CategoryShowcase from "../components/home/CategoryShowcase";
 import ProductRail from "../components/home/ProductRail";
-import SolutionsTeaser from "../components/home/SolutionsTeaser";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import BenefitsSection from "../components/home/BenefitsSection";
 import ProjectsShowcase from "../components/home/ProjectsShowcase";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import OffersTeaser from "../components/home/OffersTeaser";
-import BlogTeaser from "../components/home/BlogTeaser";
 import FaqTeaser from "../components/home/FaqTeaser";
 import FinalCta from "../components/home/FinalCta";
 import { products } from "../data/products";
@@ -29,7 +27,6 @@ export default function Home() {
         products={featured}
         viewAllHref="/products?filter=featured"
       />
-      <SolutionsTeaser />
       <ProductRail
         eyebrow="Customer Favourites"
         title="Best Sellers"
@@ -43,7 +40,6 @@ export default function Home() {
       <ProjectsShowcase />
       <TestimonialsSection />
       <OffersTeaser />
-      <BlogTeaser />
       <FaqTeaser />
       <FinalCta />
     </>

@@ -62,14 +62,14 @@ export function CartProvider({ children }) {
   const clearCart = () => setItems([]);
 
   const toggleWishlist = (product) => {
-    setWishlist((prev) => {
-      const exists = prev.includes(product.id);
-      toast?.push(
-        exists ? `Removed from wishlist` : `Added to wishlist`,
-        exists ? "info" : "success"
-      );
-      return exists ? prev.filter((id) => id !== product.id) : [...prev, product.id];
-    });
+    const exists = wishlist.includes(product.id);
+    setWishlist((prev) =>
+      exists ? prev.filter((id) => id !== product.id) : [...prev, product.id]
+    );
+    toast?.push(
+      exists ? `Removed from wishlist` : `Added to wishlist`,
+      exists ? "info" : "success"
+    );
   };
 
   const isWishlisted = (id) => wishlist.includes(id);

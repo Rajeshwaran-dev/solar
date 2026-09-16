@@ -41,3 +41,22 @@ export function LinkedinIcon(props) {
     </svg>
   );
 }
+
+export function XTwitterIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+      <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    </svg>
+  );
+}
+
+export function BloggerIcon(props) {
+  return (
+    <svg {...base} strokeWidth={1.75} {...props}>
+      <path d="M8 7h7a3 3 0 0 1 3 3v.5a2.5 2.5 0 0 1-2 2.45A3 3 0 0 1 15 19H8a3 3 0 0 1-3-3V10a3 3 0 0 1 3-3z" />
+      <circle cx="9.5" cy="10.5" r="1" fill="currentColor" />
+      <circle cx="9.5" cy="15.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}

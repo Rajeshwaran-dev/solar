@@ -4,10 +4,10 @@ import { Breadcrumb } from "../components/ui/Misc";
 import { useToast } from "../context/ToastContext";
 
 const INFO = [
-  { icon: Phone, label: "Call Us", value: "+91 1800-123-456", href: "tel:+911800123456" },
-  { icon: Mail, label: "Email Us", value: "hello@solgreensolar.in", href: "mailto:hello@solgreensolar.in" },
-  { icon: MapPin, label: "Visit Us", value: "GreenTech Tower, Whitefield, Bengaluru 560066", href: "#map" },
-  { icon: Clock, label: "Business Hours", value: "Mon – Sat, 9:00 AM – 7:00 PM", href: null },
+  { icon: Phone, label: "Call Us", value: "+91 72000 82596", href: "tel:+917200082596" },
+  { icon: Mail, label: "Email Us", value: "solgreensolar@yahoo.in", href: "mailto:solgreensolar@yahoo.in" },
+  { icon: MapPin, label: "Visit Us", value: "Plot No. 3, 4th Right Cross Street, Saravana Nagar, Main Road, Paravai, Madurai – 625402", href: "#map" },
+  { icon: Clock, label: "Business Hours", value: "Anytime (Proprietor: C. Prakash)", href: null },
 ];
 
 export default function Contact() {
@@ -20,7 +20,7 @@ export default function Contact() {
   const submit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    toast?.push("Message sent! We'll get back to you within 24 hours.");
+    toast?.push("Message sent! We'll get back to you shortly.");
     setForm({ name: "", email: "", phone: "", subject: "", message: "" });
     setTimeout(() => setSubmitted(false), 4000);
   };
@@ -29,12 +29,12 @@ export default function Contact() {
     <div className="bg-sand-50 pb-24">
       <div className="border-b border-ink-900/8 bg-gradient-to-b from-sand-100 to-sand-50 py-16 sm:py-20">
         <div className="container-page">
-          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact Us" }]} />
           <h1 className="mt-4 max-w-xl font-display text-4xl font-medium text-ink-900 sm:text-5xl">
             Let's talk solar
           </h1>
           <p className="mt-4 max-w-lg text-ink-900/60">
-            Questions about products, pricing or installation? Our team responds within 24 hours.
+            Questions about products, pricing or custom solar installation? Contact C. Prakash & our expert team anytime.
           </p>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function Contact() {
               </span>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-ink-900/45">{item.label}</p>
-                <p className="mt-1 text-sm font-semibold text-ink-900">{item.value}</p>
+                <p className="mt-1 text-xs font-semibold text-ink-900 leading-snug">{item.value}</p>
               </div>
             </Card>
           );
@@ -67,7 +67,7 @@ export default function Contact() {
               </div>
               <div>
                 <label className="label-field">Phone Number</label>
-                <input required value={form.phone} onChange={update("phone")} className="input-field" placeholder="+91 98765 43210" />
+                <input required value={form.phone} onChange={update("phone")} className="input-field" placeholder="+91 72000 82596" />
               </div>
             </div>
             <div>
@@ -99,7 +99,7 @@ export default function Contact() {
           <div id="map" className="overflow-hidden rounded-3xl shadow-soft">
             <iframe
               title="Sol Green Solar Location"
-              src="https://maps.google.com/maps?q=Whitefield%2C%20Bengaluru%2C%20Karnataka&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Paravai%2C%20Madurai%2C%20Tamil%20Nadu%20625402&t=&z=14&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="340"
               style={{ border: 0 }}
@@ -110,15 +110,15 @@ export default function Contact() {
             <MessageCircle className="h-8 w-8 text-[#25D366]" />
             <div>
               <h3 className="font-heading text-lg font-bold text-ink-900">Prefer WhatsApp?</h3>
-              <p className="mt-1 text-sm text-ink-900/55">Chat with our team instantly for quick answers.</p>
+              <p className="mt-1 text-sm text-ink-900/55">Chat directly with C. Prakash & our team anytime.</p>
             </div>
             <a
-              href="https://wa.me/911800123456"
+              href="https://wa.me/917200082596"
               target="_blank"
               rel="noreferrer"
               className="btn w-full bg-[#25D366] text-white hover:bg-[#1ebe5a]"
             >
-              <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
+              <MessageCircle className="h-4 w-4" /> Chat on WhatsApp (+91 72000 82596)
             </a>
           </div>
         </div>

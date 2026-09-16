@@ -50,9 +50,9 @@ export default function SettingsAdmin() {
           {tab === "Company" && (
             <>
               <h3 className="font-heading text-lg font-bold text-ink-900">Company Details</h3>
-              <div><label className="label-field">Legal Business Name</label><input defaultValue="Sol Green Solar Pvt. Ltd." className="input-field" /></div>
-              <div><label className="label-field">GSTIN</label><input defaultValue="29ABCDE1234F1Z5" className="input-field" /></div>
-              <div><label className="label-field">Registered Address</label><textarea rows={3} defaultValue="4th Floor, GreenTech Tower, Whitefield, Bengaluru 560066" className="input-field resize-none" /></div>
+              <div><label className="label-field">Brand Name</label><input defaultValue="Sol Green" className="input-field" /></div>
+              <div><label className="label-field">Proprietor Name</label><input defaultValue="C. Prakash" className="input-field" /></div>
+              <div><label className="label-field">Registered Address</label><textarea rows={3} defaultValue="Plot No. 3, 4th Right Cross Street, Saravana Nagar, Main Road, Paravai, Madurai – 625402" className="input-field resize-none" /></div>
             </>
           )}
 
@@ -60,11 +60,11 @@ export default function SettingsAdmin() {
             <>
               <h3 className="font-heading text-lg font-bold text-ink-900">Contact Information</h3>
               <div className="grid grid-cols-2 gap-4">
-                <div><label className="label-field">Support Phone</label><input defaultValue="+91 1800-123-456" className="input-field" /></div>
-                <div><label className="label-field">Support Email</label><input defaultValue="hello@solgreensolar.in" className="input-field" /></div>
+                <div><label className="label-field">Support Phone</label><input defaultValue="+91 72000 82596" className="input-field" /></div>
+                <div><label className="label-field">Support Email</label><input defaultValue="solgreensolar@yahoo.in" className="input-field" /></div>
               </div>
-              <div><label className="label-field">WhatsApp Number</label><input defaultValue="+91 1800-123-456" className="input-field" /></div>
-              <div><label className="label-field">Business Hours</label><input defaultValue="Mon – Sat, 9:00 AM – 7:00 PM" className="input-field" /></div>
+              <div><label className="label-field">WhatsApp Number</label><input defaultValue="+91 72000 82596" className="input-field" /></div>
+              <div><label className="label-field">Business Hours</label><input defaultValue="Anytime" className="input-field" /></div>
             </>
           )}
 

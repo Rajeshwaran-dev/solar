@@ -21,9 +21,18 @@ export function ToastProvider({ children }) {
 
   const push = useCallback(
     (message, type = "success") => {
-      const id = ++idCounter;
-      setToasts((prev) => [...prev, { id, message, type }]);
-      setTimeout(() => dismiss(id), 3200);
+      const now = Date.now();
+      setToasts((prev) => {
+        // Prevent duplicate toasts within 1000ms window
+        const isDuplicate = prev.some(
+          (t) => t.message === message && t.type === type && now - t.createdAt < 1000
+        );
+        if (isDuplicate) return prev;
+
+        const id = ++idCounter;
+        setTimeout(() => dismiss(id), 3200);
+        return [...prev, { id, message, type, createdAt: now }];
+      });
     },
     [dismiss]
   );

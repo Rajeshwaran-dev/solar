@@ -16,7 +16,7 @@ export default function QuickViewModal({ product, onClose }) {
     <Modal open={!!product} onClose={onClose} maxWidth="max-w-3xl">
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
         <div className="relative aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-sand-100 to-sand-200">
-          <ProductArt icon={product.icon} tint={product.tint} uid={`qv-${product.id}`} className="h-full w-full p-8" />
+          <ProductArt icon={product.icon} tint={product.tint} uid={`qv-${product.id}`} image={product.image} alt={product.name} className="h-full w-full object-cover" />
           <div className="absolute left-3 top-3 flex flex-col gap-1.5">
             {product.badges?.map((b) => <Badge key={b} tone={b}>{b}</Badge>)}
             <DiscountBadge percent={discount} />

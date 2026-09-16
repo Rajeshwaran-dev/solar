@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Target, Eye, Leaf, HeartHandshake, ShieldCheck, Sparkles, ArrowRight } from "lucide-react";
+import { Target, Eye, ShieldCheck, Award, HeartHandshake, CheckCircle2, ArrowRight } from "lucide-react";
 import ProductArt from "../components/illustrations/ProductArt";
 import { OrbGlow } from "../components/illustrations/Decorative";
 import SectionHeading from "../components/ui/SectionHeading";
@@ -8,132 +8,152 @@ import { Breadcrumb } from "../components/ui/Misc";
 import { stats } from "../data/content";
 
 const JOURNEY = [
-  { year: "2011", title: "Founded in Bengaluru", desc: "Started as a two-person team installing solar water heaters for local homes." },
-  { year: "2015", title: "First 1,000 Installations", desc: "Expanded into street lighting and off-grid systems across Karnataka." },
-  { year: "2019", title: "Pan-India Expansion", desc: "Launched certified installer network across 12 states." },
-  { year: "2022", title: "Manufacturing Partnership", desc: "Began co-engineering panels and inverters with domestic manufacturers." },
-  { year: "2026", title: "18,500+ Homes Powered", desc: "Crossed 42MW of cumulative installed capacity nationwide." },
+  { year: "2011", title: "Sol Green Established", desc: "Founded with a vision to promote clean, sustainable, and energy-efficient technologies." },
+  { year: "2015", title: "Sector Expansion", desc: "Expanded solutions across residential, commercial, industrial, and agricultural sectors." },
+  { year: "2019", title: "Full Energy Portfolio", desc: "Introduced complete energy solutions including solar fencing, pumps, dryers & concentrators." },
+  { year: "2022", title: "Tech & Support Network", desc: "Adopted latest technologies backed by an extensive after-sales service network." },
+  { year: "2026", title: "Powering a Greener Tomorrow", desc: "Serving thousands of satisfied customers with dependable, long-term energy value." },
 ];
 
 const VALUES = [
-  { icon: ShieldCheck, title: "Integrity", desc: "Transparent pricing, honest sizing, no upsell pressure." },
-  { icon: Sparkles, title: "Craftsmanship", desc: "Every install treated like it's for our own home." },
-  { icon: Leaf, title: "Sustainability", desc: "We measure success in tons of CO₂ offset, not just revenue." },
-  { icon: HeartHandshake, title: "Long-Term Trust", desc: "Warranty support that actually shows up when called." },
+  { icon: Award, title: "Quality", desc: "Maintaining high-quality standards across all products and custom installations." },
+  { icon: ShieldCheck, title: "Integrity", desc: "Guided by honesty, transparent pricing, and long-term customer trust." },
+  { icon: HeartHandshake, title: "Reliability", desc: "Delivering dependable energy solutions backed by excellent after-sales support." },
+  { icon: CheckCircle2, title: "Customer Satisfaction", desc: "Working closely with clients to understand requirements and deliver customized solutions." },
+];
+
+const MISSION_POINTS = [
+  "Deliver high-quality and innovative energy solutions.",
+  "Ensure customer satisfaction through reliable products and services.",
+  "Promote environmental sustainability and energy conservation.",
+  "Provide professional support and long-term value to our customers.",
+  "Contribute to a cleaner and greener future for generations to come.",
 ];
 
 export default function About() {
   return (
     <div className="bg-sand-50 pb-24">
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-sand-100 to-sand-50 pb-16 pt-10">
         <OrbGlow className="right-[-5%] top-10 h-72 w-72" />
         <div className="container-page relative">
-          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "About" }]} />
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "About Us" }]} />
           <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-              <span className="eyebrow">Our Story</span>
-              <h1 className="mt-5 font-display text-4xl font-medium leading-[1.1] text-ink-900 sm:text-5xl">
-                Fifteen years of turning sunlight into savings.
+              <span className="eyebrow">About Sol Green</span>
+              <h1 className="mt-5 font-display text-4xl font-medium leading-[1.15] text-ink-900 sm:text-5xl">
+                Sol Green – Powering a Greener Tomorrow Since 2011.
               </h1>
-              <p className="mt-6 max-w-md text-ink-900/60">
-                Sol Green Solar began with a simple belief: renewable energy
-                should be accessible, dependable, and beautifully engineered —
-                not a compromise. Today we're one of India's most trusted
-                solar product and solutions brands.
+              <p className="mt-6 text-base leading-relaxed text-ink-900/70">
+                Sol Green is a trusted renewable energy solutions company established in 2011 with a vision to promote clean, sustainable, and energy-efficient technologies. Over the years, we have built a strong reputation for delivering reliable products, quality workmanship, and customer-focused services across residential, commercial, industrial, and agricultural sectors.
               </p>
               <Link to="/contact" className="btn-primary mt-8 inline-flex">
-                Work With Us <ArrowRight className="h-4 w-4" />
+                Get in Touch <ArrowRight className="h-4 w-4" />
               </Link>
             </motion.div>
+
+            {/* Photo Collage */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               className="grid grid-cols-2 gap-4"
             >
-              <div className="col-span-2 rounded-3xl bg-primary-800 p-8">
-                <ProductArt icon="powerSystem" tint="amber" className="mx-auto h-32 w-32" />
+              <div className="col-span-2 aspect-[16/9] overflow-hidden rounded-3xl border border-ink-900/10 shadow-soft">
+                <ProductArt image="/product-5.jpeg" alt="Solar Installation" className="h-full w-full object-cover" />
               </div>
-              <div className="rounded-3xl bg-white p-6 shadow-soft">
-                <ProductArt icon="panel" tint="green" className="h-20 w-20" />
+              <div className="aspect-square overflow-hidden rounded-3xl border border-ink-900/10 shadow-soft">
+                <ProductArt image="/product-1.jpeg" alt="Solar Power System" className="h-full w-full object-cover" />
               </div>
-              <div className="rounded-3xl bg-white p-6 shadow-soft">
-                <ProductArt icon="waterHeater" tint="sky" className="h-20 w-20" />
+              <div className="aspect-square overflow-hidden rounded-3xl border border-ink-900/10 shadow-soft">
+                <ProductArt image="/product-6.jpeg" alt="Solar Water Heater" className="h-full w-full object-cover" />
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Story blocks */}
-      <section className="py-20 sm:py-28">
-        <div className="container-page space-y-20">
+      {/* Main Story Paragraphs */}
+      <section className="py-16 sm:py-24">
+        <div className="container-page space-y-16">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-            <div className="order-2 lg:order-1">
-              <span className="eyebrow">The Beginning</span>
-              <h2 className="mt-4 font-display text-3xl font-medium text-ink-900">
-                It started with one leaking, unreliable water heater.
-              </h2>
-              <p className="mt-4 text-ink-900/60">
-                Our founder's own electric geyser failed one winter, and the
-                repair quote cost nearly as much as a solar alternative. That
-                small moment of arithmetic became a company — one committed to
-                making the economics of solar obvious to every Indian household.
-              </p>
-            </div>
-            <div className="order-1 flex justify-center rounded-3xl bg-gradient-to-br from-sky-50 to-sand-100 p-12 lg:order-2">
-              <ProductArt icon="waterHeater" tint="sky" className="h-52 w-52" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-            <div className="flex justify-center rounded-3xl bg-gradient-to-br from-primary-50 to-sand-100 p-12">
-              <ProductArt icon="powerSystem" tint="green" className="h-52 w-52" />
-            </div>
             <div>
-              <span className="eyebrow">Today</span>
+              <span className="eyebrow">Complete Energy Solutions</span>
               <h2 className="mt-4 font-display text-3xl font-medium text-ink-900">
-                A full-stack solar company, not just a storefront.
+                Comprehensive Expertise Across All Sectors
               </h2>
-              <p className="mt-4 text-ink-900/60">
-                We now design, sell, install and maintain complete solar
-                ecosystems — from single lanterns to industrial rooftop
-                arrays — backed by an in-house engineering and installer team
-                across 20+ states.
+              <p className="mt-4 text-base leading-relaxed text-ink-900/70">
+                We specialize in providing complete energy solutions, including power generation systems, energy storage solutions, water heating systems, fencing solutions, pumping systems, street lighting, drying systems, and other innovative renewable energy products.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-ink-900/70">
+                Our commitment to quality, innovation, and customer satisfaction has enabled us to successfully serve a growing number of customers and projects across residential, commercial, industrial, and agricultural sectors.
+              </p>
+            </div>
+            <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-ink-900/10 shadow-lift">
+              <ProductArt image="/product-3.jpeg" alt="Solar Solutions" className="h-full w-full object-cover" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+            <div className="order-2 aspect-[4/3] overflow-hidden rounded-3xl border border-ink-900/10 shadow-lift lg:order-1">
+              <ProductArt image="/product-4.jpeg" alt="Solar Battery & Inverter System" className="h-full w-full object-cover" />
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="eyebrow">Customer Commitment</span>
+              <h2 className="mt-4 font-display text-3xl font-medium text-ink-900">
+                Customized Solutions & Excellent Support
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-ink-900/70">
+                At Sol Green, we believe that every customer deserves a dependable and cost-effective energy solution. Our experienced team works closely with clients to understand their requirements and provide customized solutions that deliver long-term value and performance.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-ink-900/70">
+                Since our inception, we have remained committed to adopting the latest technologies, maintaining high-quality standards, and offering excellent after-sales support. Through continuous improvement and innovation, we strive to contribute to a greener future while helping customers reduce energy costs and achieve energy independence.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission / Vision */}
-      <section className="bg-sand-100/70 py-20 sm:py-28">
-        <div className="container-page grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <div className="card p-8">
-            <Target className="h-8 w-8 text-primary-700" />
-            <h3 className="mt-5 font-heading text-xl font-bold text-ink-900">Our Mission</h3>
-            <p className="mt-3 text-ink-900/60">
-              To make dependable solar energy the default choice for Indian
-              homes and businesses — through honest sizing, quality hardware,
-              and installation you can trust.
-            </p>
+      {/* Vision & Mission Cards */}
+      <section className="bg-sand-100/80 py-20 sm:py-28">
+        <div className="container-page grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {/* Vision */}
+          <div className="card flex flex-col justify-between p-8 sm:p-10">
+            <div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-800/10 text-primary-800">
+                <Eye className="h-6 w-6" />
+              </div>
+              <span className="eyebrow mt-6">Our Vision</span>
+              <h3 className="mt-3 font-display text-2xl font-bold text-ink-900">Vision</h3>
+              <p className="mt-4 text-base leading-relaxed text-ink-900/75">
+                To be a leading provider of sustainable energy solutions that empower communities and businesses with clean, reliable, and efficient energy.
+              </p>
+            </div>
           </div>
-          <div className="card bg-ink-900 p-8 text-sand-50">
-            <Eye className="h-8 w-8 text-accent-400" />
-            <h3 className="mt-5 font-heading text-xl font-bold text-sand-50">Our Vision</h3>
-            <p className="mt-3 text-sand-100/65">
-              A future where every rooftop in India generates clean power —
-              and where switching to solar is as simple as ordering it online.
-            </p>
+
+          {/* Mission */}
+          <div className="card bg-ink-900 p-8 text-sand-50 sm:p-10 shadow-lift">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500/20 text-accent-400">
+              <Target className="h-6 w-6" />
+            </div>
+            <span className="eyebrow-dark mt-6">Our Mission</span>
+            <h3 className="mt-3 font-display text-2xl font-bold text-sand-50">Mission</h3>
+            <ul className="mt-5 space-y-3">
+              {MISSION_POINTS.map((pt, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-sand-100/80">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Solar Journey timeline */}
+      {/* Timeline Journey */}
       <section className="py-20 sm:py-28">
         <div className="container-page">
-          <SectionHeading align="center" eyebrow="Our Journey" title="Fifteen years, one milestone at a time" className="mx-auto" />
+          <SectionHeading align="center" eyebrow="Our Milestones" title="Sol Green Journey Since 2011" className="mx-auto" />
           <div className="relative mx-auto mt-16 max-w-3xl">
             <div className="absolute left-4 top-0 h-full w-0.5 bg-ink-900/10 sm:left-1/2" />
             {JOURNEY.map((j, i) => (
@@ -150,30 +170,33 @@ export default function About() {
                 <span className="absolute left-2.5 top-1 h-3 w-3 rounded-full bg-accent-500 sm:left-auto sm:right-[-6px] sm:top-1.5" style={i % 2 === 1 ? { left: "-6px", right: "auto" } : {}} />
                 <span className="font-display text-2xl font-medium text-primary-700">{j.year}</span>
                 <h3 className="font-heading text-base font-bold text-ink-900">{j.title}</h3>
-                <p className="text-sm text-ink-900/55">{j.desc}</p>
+                <p className="text-sm text-ink-900/60">{j.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values Section */}
       <section className="section-dark py-20 sm:py-28">
         <div className="container-page">
-          <SectionHeading dark align="center" eyebrow="What Drives Us" title="Our company values" className="mx-auto" />
+          <SectionHeading dark align="center" eyebrow="Our Principles" title="Our Core Values" className="mx-auto" />
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-sand-100/60">
+            Our success is driven by our dedication to quality, integrity, reliability, and customer satisfaction. These values continue to guide us as we expand our services and strengthen our position as a trusted name in the renewable energy industry.
+          </p>
           <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {VALUES.map((v) => (
-              <div key={v.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 text-center">
+              <div key={v.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 text-center shadow-soft">
                 <v.icon className="mx-auto h-7 w-7 text-accent-400" />
                 <h3 className="mt-4 font-heading text-base font-bold text-sand-50">{v.title}</h3>
-                <p className="mt-2 text-sm text-sand-100/55">{v.desc}</p>
+                <p className="mt-2 text-sm text-sand-100/60">{v.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Impact Stats */}
       <section className="py-16">
         <div className="container-page grid grid-cols-2 gap-6 sm:grid-cols-4">
           {stats.map((s) => (
@@ -187,15 +210,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Final CTA */}
       <section className="container-page">
-        <div className="relative overflow-hidden rounded-3xl bg-primary-900 px-6 py-16 text-center sm:px-16">
+        <div className="relative overflow-hidden rounded-3xl bg-primary-900 px-6 py-16 text-center sm:px-16 shadow-lift">
           <OrbGlow className="left-10 top-0 h-56 w-56" />
           <h2 className="relative font-display text-3xl font-medium text-sand-50 sm:text-4xl">
             Want to be our next success story?
           </h2>
           <p className="relative mx-auto mt-4 max-w-md text-sand-100/65">
-            Talk to our team about the right solar solution for your home or business.
+            Talk to our experienced team about custom, long-term renewable energy solutions for your home or business.
           </p>
           <Link to="/contact" className="btn-accent relative mt-8 inline-flex">
             Get in Touch <ArrowRight className="h-4 w-4" />

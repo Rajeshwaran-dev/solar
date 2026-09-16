@@ -85,7 +85,7 @@ export default function Cart() {
                 className="card flex flex-col gap-4 p-4 sm:flex-row sm:items-center"
               >
                 <Link to={`/product/${item.product.slug}`} className="h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-sand-100 to-sand-200">
-                  <ProductArt icon={item.product.icon} tint={item.product.tint} uid={`cart-${item.id}`} className="h-full w-full p-3" />
+                  <ProductArt icon={item.product.icon} tint={item.product.tint} uid={`cart-${item.id}`} image={item.product.image} alt={item.product.name} className="h-full w-full object-cover" />
                 </Link>
                 <div className="flex-1">
                   <Link to={`/product/${item.product.slug}`} className="font-heading text-sm font-bold text-ink-900 hover:text-primary-800">

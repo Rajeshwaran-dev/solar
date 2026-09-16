@@ -19,7 +19,9 @@ export default function ProductCard({ product, onQuickView, className = "" }) {
             icon={product.icon}
             tint={product.tint}
             uid={product.id}
-            className="h-full w-full p-6 transition-transform duration-500 group-hover:scale-110"
+            image={product.image}
+            alt={product.name}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </Link>
 

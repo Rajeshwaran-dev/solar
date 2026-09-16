@@ -28,10 +28,7 @@ const NAV = [
   {
     section: "Content",
     items: [
-      { label: "Banners", href: "/admin/banners", icon: Image },
-      { label: "Blog", href: "/admin/blog", icon: FileText },
       { label: "Projects", href: "/admin/projects", icon: Briefcase },
-      { label: "Services", href: "/admin/services", icon: Wrench },
     ],
   },
   {
@@ -47,18 +44,13 @@ const NAV = [
 export default function AdminSidebar({ onNavigate, className = "" }) {
   return (
     <div className={`flex h-full w-72 shrink-0 flex-col bg-ink-950 text-sand-100 ${className}`}>
-      <div className="flex items-center justify-between px-6 py-6">
-        <Link to="/admin" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-500">
-            <Sun className="h-4.5 w-4.5 text-ink-950" />
-          </span>
-          <div className="leading-none">
-            <p className="font-heading text-sm font-extrabold text-sand-50">Sol Green</p>
-            <p className="text-[10px] font-semibold uppercase tracking-wide text-sand-100/40">Admin Panel</p>
-          </div>
+      <div className="flex shrink-0 items-center justify-between border-b border-white/8 px-5 py-5">
+        <Link to="/admin" className="flex items-center gap-3 w-full pr-2">
+          <img src="/logo.png" alt="Sol Green Solar" className="h-16 sm:h-20 w-auto max-h-[72px] rounded-2xl bg-white px-4 py-2.5 object-contain shadow-medium transition-transform hover:scale-102" />
+          <span className="text-[10px] font-extrabold uppercase tracking-widest text-accent-400 bg-accent-400/10 px-2.5 py-1 rounded-full border border-accent-400/20 shrink-0">Panel</span>
         </Link>
         {onNavigate && (
-          <button onClick={onNavigate} className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-sand-100 lg:hidden">
+          <button onClick={onNavigate} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/5 text-sand-100 lg:hidden">
             <X className="h-4 w-4" />
           </button>
         )}
@@ -89,7 +81,7 @@ export default function AdminSidebar({ onNavigate, className = "" }) {
         ))}
       </nav>
 
-      <div className="border-t border-white/8 p-4">
+      <div className="shrink-0 border-t border-white/8 p-4">
         <Link to="/" className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-sand-100/60 transition hover:bg-white/5 hover:text-sand-50">
           ← Back to Storefront
         </Link>

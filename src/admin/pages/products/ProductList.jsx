@@ -77,7 +77,7 @@ export default function ProductList() {
                     <Td>
                       <div className="flex items-center gap-3">
                         <div className="h-11 w-11 shrink-0 overflow-hidden rounded-xl bg-sand-100">
-                          <ProductArt icon={p.icon} tint={p.tint} uid={`al-${p.id}`} className="h-full w-full p-1.5" />
+                          <ProductArt icon={p.icon} tint={p.tint} uid={`al-${p.id}`} image={p.image} alt={p.name} className="h-full w-full object-cover" />
                         </div>
                         <span className="line-clamp-1 max-w-[220px] font-semibold text-ink-900">{p.name}</span>
                       </div>

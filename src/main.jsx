@@ -5,15 +5,18 @@ import './index.css'
 import App from './App.jsx'
 import { ToastProvider } from './context/ToastContext.jsx'
 import { CartProvider } from './context/CartContext.jsx'
+import { AdminAuthProvider } from './context/AdminAuthContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <ToastProvider>
-        <CartProvider>
-          <App />
-        </CartProvider>
-      </ToastProvider>
+      <AdminAuthProvider>
+        <ToastProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </ToastProvider>
+      </AdminAuthProvider>
     </BrowserRouter>
   </StrictMode>,
 )

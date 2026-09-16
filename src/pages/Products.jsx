@@ -187,8 +187,8 @@ export default function Products({ categorySlug }) {
           </div>
 
           {loading ? (
-            <div className={`mt-6 grid gap-4 sm:gap-6 ${view === "grid" ? "grid-cols-2 md:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}>
-              {Array.from({ length: 8 }).map((_, i) => <ProductCardSkeleton key={i} />)}
+            <div className={`mt-6 grid gap-4 sm:gap-6 ${view === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"}`}>
+              {Array.from({ length: 6 }).map((_, i) => <ProductCardSkeleton key={i} />)}
             </div>
           ) : filtered.length === 0 ? (
             <div className="mt-6">
@@ -202,7 +202,7 @@ export default function Products({ categorySlug }) {
           ) : (
             <motion.div
               layout
-              className={`mt-6 grid gap-4 sm:gap-6 ${view === "grid" ? "grid-cols-2 md:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}
+              className={`mt-6 grid gap-4 sm:gap-6 ${view === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"}`}
             >
               {visible.map((p) =>
                 view === "grid" ? (
@@ -255,8 +255,8 @@ export default function Products({ categorySlug }) {
 function ProductListRow({ product, onQuickView }) {
   return (
     <div className="card card-hover flex gap-5 p-4">
-      <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-sand-100 to-sand-200">
-        <ProductArt icon={product.icon} tint={product.tint} uid={`row-${product.id}`} className="h-full w-full p-3" />
+      <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-2xl bg-sand-100">
+        <ProductArt icon={product.icon} tint={product.tint} uid={`row-${product.id}`} image={product.image} alt={product.name} className="h-full w-full object-cover" />
       </div>
       <div className="flex flex-1 flex-col justify-between">
         <div>

@@ -18,10 +18,10 @@ export default function Hero() {
           <span className="eyebrow">
             <Zap className="h-3.5 w-3.5" /> India's Premium Solar Marketplace
           </span>
-          <h1 className="mt-6 font-display text-[2.6rem] font-medium leading-[1.05] text-ink-900 sm:text-6xl lg:text-[3.4rem]">
+          <h1 className="mt-6 font-display text-[2.6rem] font-extrabold tracking-tight leading-[1.08] text-ink-900 sm:text-6xl lg:text-[3.5rem]">
             Power your world,
             <br />
-            <span className="text-gradient-solar italic">naturally.</span>
+            <span className="text-gradient-solar">naturally.</span>
           </h1>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-ink-900/60 sm:text-lg">
             Premium solar water heaters, street lights, power systems and more —

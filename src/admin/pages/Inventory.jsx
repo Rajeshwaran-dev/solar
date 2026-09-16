@@ -70,7 +70,7 @@ export default function Inventory() {
                   <Td>
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-sand-100">
-                        <ProductArt icon={p.icon} tint={p.tint} uid={`inv-${p.id}`} className="h-full w-full p-1" />
+                        <ProductArt icon={p.icon} tint={p.tint} uid={`inv-${p.id}`} image={p.image} alt={p.name} className="h-full w-full object-cover" />
                       </div>
                       <span className="line-clamp-1 max-w-[240px] font-semibold text-ink-900">{p.name}</span>
                     </div>

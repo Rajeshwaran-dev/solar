@@ -85,7 +85,9 @@ export default function ProductDetail() {
               icon={product.icon}
               tint={activeImg === 2 ? "amber" : product.tint}
               uid={`main-${product.id}`}
-              className={`h-4/5 w-4/5 ${GALLERY_STYLES[activeImg].transform}`}
+              image={product.image}
+              alt={product.name}
+              className={`h-full w-full object-cover ${GALLERY_STYLES[activeImg].transform}`}
             />
             <div className="absolute left-4 top-4 flex flex-col gap-1.5">
               {product.badges?.map((b) => <Badge key={b} tone={b}>{b}</Badge>)}
@@ -101,7 +103,7 @@ export default function ProductDetail() {
                   activeImg === i ? "ring-2 ring-primary-700 ring-offset-2" : "opacity-70 hover:opacity-100"
                 }`}
               >
-                <ProductArt icon={product.icon} tint={i === 2 ? "amber" : product.tint} uid={`thumb-${product.id}-${i}`} className="h-3/4 w-3/4" />
+                <ProductArt icon={product.icon} tint={i === 2 ? "amber" : product.tint} uid={`thumb-${product.id}-${i}`} image={product.image} alt={product.name} className="h-full w-full object-cover" />
               </button>
             ))}
           </div>
